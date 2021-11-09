@@ -31,7 +31,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import AddOffer from "@/components/offers/add.vue";
+import AddOffer from "@/components/offers/add-offer.vue";
 
 export default {
   name: "OffersView",
