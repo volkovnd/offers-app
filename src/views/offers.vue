@@ -23,43 +23,31 @@
           </v-grid-col>
         </v-grid>
       </v-col>
-      <v-col cols="3">
-        <AddOffer @submit="loadOffers" />
-      </v-col>
+      <v-col cols="3"><AddOffer /></v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import AddOffer from "@/components/offers/add.vue";
+import { mapGetters, mapActions } from "vuex";
 
-import { getOffers, deleteOffer } from "@/api";
+import AddOffer from "@/components/offers/add.vue";
 
 export default {
   name: "OffersView",
 
   components: { AddOffer },
 
-  data() {
-    return {
-      offers: [],
-    };
+  computed: {
+    ...mapGetters("offers", ["offers"]),
   },
 
-  async created() {
-    await this.loadOffers();
+  created() {
+    this.getOffers();
   },
 
   methods: {
-    async deleteOffer(id) {
-      await deleteOffer(id);
-
-      await this.loadOffers();
-    },
-
-    async loadOffers() {
-      this.offers = await getOffers();
-    },
+    ...mapActions("offers", ["deleteOffer", "getOffers"]),
   },
 };
 </script>

@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import { createOffer } from "@/api";
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
@@ -20,12 +21,12 @@ export default {
     };
   },
   methods: {
-    async onSubmit(event) {
-      await createOffer(this.formData);
+    ...mapActions("offers", ["createOffer"]),
+
+    async onSubmit() {
+      await this.createOffer(this.formData);
 
       this.reset();
-
-      this.$emit("submit", event);
     },
 
     reset() {
