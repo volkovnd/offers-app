@@ -17,13 +17,15 @@
           <v-grid-col col="3">{{ offer.author }}</v-grid-col>
           <v-grid-col col="2">
             <v-grid gap="0.5rem">
-              <v-btn variant="primary" size="sm" @click="$router.push('/')">Подробнее</v-btn>
+              <v-btn variant="primary" size="sm" @click="$router.push(`/offers/${offer.id}`)">Подробнее</v-btn>
               <v-btn variant="danger" size="sm" @click="deleteOffer(offer.id)">Удалить</v-btn>
             </v-grid>
           </v-grid-col>
         </v-grid>
       </v-col>
-      <v-col cols="3"><AddOffer /></v-col>
+      <v-col cols="3">
+        <AddOffer />
+      </v-col>
     </v-row>
   </div>
 </template>

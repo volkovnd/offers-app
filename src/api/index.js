@@ -37,6 +37,7 @@ const apiRequest = function (path, method = "get", data = {}) {
  * @example export const createPost = (data) => apiRequest(`/posts`, "post", data);
  */
 
+export const getOfferById = (id, data) => apiRequest(`/offers/${id}`, "get", data);
 export const getOffers = (data) =>
   apiRequest("/offers", "get", {
     params: data,

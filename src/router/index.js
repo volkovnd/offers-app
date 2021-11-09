@@ -12,6 +12,11 @@ const router = new VueRouter({
       name: "offers",
       component: () => import(/* webpackChunkName: "offers" */ "@/views/offers.vue"),
     },
+    {
+      path: "/offers/:id",
+      name: "offer",
+      component: () => import(/* webpackChunkName: "offer" */ "@/views/offer.vue"),
+    },
   ],
 });
 
