@@ -3,20 +3,27 @@
     <div class="offers-grid-title">Offers grid</div>
 
     <div class="offers-grid-header">
-      <v-grid columns="9">
+      <v-grid columns="10">
         <v-grid-col col="1">ID</v-grid-col>
         <v-grid-col col="3">Title</v-grid-col>
         <v-grid-col col="3">Author</v-grid-col>
-        <v-grid-col col="2">Actions</v-grid-col>
+        <v-grid-col col="3">Actions</v-grid-col>
       </v-grid>
     </div>
 
     <div class="offers-grid-body">
-      <v-grid v-for="offer in offers" :key="offer.id" columns="9" gap="1.5rem" class="offers-grid-row" align-h="center">
+      <v-grid
+        v-for="offer in offers"
+        :key="offer.id"
+        columns="10"
+        gap="1.5rem"
+        class="offers-grid-row"
+        align-v="center"
+      >
         <v-grid-col col="1">{{ offer.id }}</v-grid-col>
         <v-grid-col col="3">{{ offer.title }}</v-grid-col>
         <v-grid-col col="3">{{ offer.author }}</v-grid-col>
-        <v-grid-col col="2">
+        <v-grid-col col="3">
           <v-grid gap="0.5rem">
             <v-btn variant="primary" size="sm" @click="$router.push(`/offers/${offer.id}`)">Подробнее</v-btn>
             <v-btn variant="danger" size="sm" @click="deleteOffer(offer.id)">Удалить</v-btn>
@@ -46,6 +53,12 @@ export default {
 
 <style lang="scss">
 .offers-grid {
+  &-title {
+    margin-bottom: $headings-margin-bottom;
+    font-size: 1.5rem;
+    font-weight: $headings-font-weight;
+  }
+
   &-header {
     margin-bottom: 1.5rem;
     font-weight: bold;
@@ -55,14 +68,12 @@ export default {
   }
 
   &-row {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid $dark;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #bbb;
 
     &:first-child {
-      border-top: 1px solid $dark;
+      border-top: 1px solid #bbb;
     }
   }
 }
