@@ -1,4 +1,4 @@
-# Initial template
+# Offers app
 
 ## Project setup
 

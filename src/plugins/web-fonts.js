@@ -1,5 +1,9 @@
-export default function (Vue, options) {
+export default function () {
   import("webfontloader").then((WebFont) => {
-    WebFont.load(options);
+    WebFont.load({
+      google: {
+        families: ["Open Sans:400,500,700:cyrillic,latin"],
+      },
+    });
   });
 }

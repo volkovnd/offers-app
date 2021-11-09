@@ -36,7 +36,6 @@
     "hygen": "^6.1.0",
     "json-server": "^0.17.0",
     "postcss-html": "^1.1.0",
-    "postcss-preset-env": "^6.7.0",
     "postcss-scss": "^4.0.1",
     "prettier": "^2.2.1",
     "sass": "^1.43.4",
@@ -47,5 +46,17 @@
     "stylelint-config-standard": "^23.0.0",
     "stylelint-scss": "^4.0.0",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "name": "@volkovnd/offers-app",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovnd/offers-app.git"
+  },
+  "keywords": [],
+  "author": "Volkov Nikolay <volkovnd@yandex.ru> (https://github.com/volkovnd/)",
+  "bugs": {
+    "url": "https://github.com/volkovnd/offers-app/issues"
+  },
+  "homepage": "https://github.com/volkovnd/offers-app#readme"
 }

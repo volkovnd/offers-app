@@ -24,8 +24,6 @@ module.exports = {
   },
 
   chainWebpack: (config) => {
-    config.performance.hints(config.mode === "production" ? "warning" : false);
-
     config.module
       .rule("vue")
       .use("vue-loader")
@@ -48,15 +46,15 @@ module.exports = {
   },
 
   configureWebpack: (config) => {
-    config.devtool = config.mode === "development" ? "source-map" : false;
+    config.devtool = process.env.NODE_ENV === "development" ? "source-map" : false;
   },
 };
 
 /** @type {import("webpack-dev-server").Configuration} */
 module.exports.devServer = {
-  host: process.env.HOST || "0.0.0.0",
-  port: process.env.PORT || 8080,
   transportMode: "ws",
+  noInfo: true,
+  compress: true,
   before: (app) => {
     require("./devServer")(app);
   },

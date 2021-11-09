@@ -10,11 +10,7 @@ import GlobalComponentsPlugin from "@/plugins/global-components";
 
 Vue.config.productionTip = false;
 
-Vue.use(WebFontsPlugin, {
-  google: {
-    families: ["Open Sans:400,500,700:cyrillic,latin"],
-  },
-});
+Vue.use(WebFontsPlugin);
 Vue.use(GlobalComponentsPlugin);
 
 new Vue({

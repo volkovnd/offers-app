@@ -36,3 +36,12 @@ const apiRequest = function (path, method = "get", data = {}) {
  * @example export const getPosts = (data) => apiRequest(`/posts`, "get", data);
  * @example export const createPost = (data) => apiRequest(`/posts`, "post", data);
  */
+
+export const getOffers = (data) =>
+  apiRequest("/offers", "get", {
+    params: data,
+  });
+
+export const deleteOffer = (id, data) => apiRequest(`/offers/${id}`, "delete", data);
+
+export const createOffer = (data) => apiRequest(`/offers`, "post", data);
