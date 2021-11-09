@@ -1,9 +1,11 @@
 <script>
 import { mergeData } from "vue-functional-data-merge";
+import { gridAlignMixin } from "@/mixins/gridAlign";
 
 export default {
   name: "VRow",
   functional: true,
+  mixins: [gridAlignMixin],
   props: {
     tagName: {
       type: String,
@@ -12,14 +14,6 @@ export default {
     column: {
       type: Boolean,
       default: false,
-    },
-    alignV: {
-      type: String,
-      default: null,
-    },
-    alignH: {
-      type: String,
-      default: null,
     },
     noGutters: {
       type: Boolean,

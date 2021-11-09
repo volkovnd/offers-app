@@ -1,9 +1,11 @@
 <script>
 import { mergeData } from "vue-functional-data-merge";
+import { gridAlignMixin } from "@/mixins/gridAlign";
 
 export default {
   name: "VGrid",
   functional: true,
+  mixins: [gridAlignMixin],
   props: {
     tagName: {
       type: String,
@@ -27,6 +29,10 @@ export default {
       props.tagName,
       mergeData(data, {
         staticClass: "grid",
+        class: {
+          [`align-items-${props.alignV}`]: !!props.alignV,
+          [`justify-content-${props.alignH}`]: !!props.alignH,
+        },
         style: {
           "--bs-columns": props.columns,
           "--bs-rows": props.rows,
